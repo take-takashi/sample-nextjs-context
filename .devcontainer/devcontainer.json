@@ -1,0 +1,66 @@
+{
+  "name": "Node.js & TypeScript",
+  "build": {
+    "dockerfile": "Dockerfile",
+    // Update 'VARIANT' to pick a Node version: 18, 16, 14.
+    // Append -bullseye or -buster to pin to an OS version.
+    // Use -bullseye variants on local on arm64/Apple Silicon.
+    "args": {
+      "VARIANT": "16-bullseye"
+    }
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "hediet.vscode-drawio",
+        "GrapeCity.gc-excelviewer",
+        "mechatroner.rainbow-csv",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "donjayamanne.githistory",
+        "oderwat.indent-rainbow",
+        "dbaeumer.vscode-eslint",
+        "bierner.markdown-mermaid",
+        "Gruntfuggly.todo-tree",
+        "humao.rest-client"
+      ],
+      "settings": {
+        "editor.tabSize": 2, // インデントタブサイズは2とする
+        "editor.insertSpaces": true, // インデントはスペースとする
+        "editor.defaultFormatter": "esbenp.prettier-vscode", // デフォルトフォーマッターをPrettierにする
+        "editor.formatOnSave": true, // 保存時にフォーマットする
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true // ファイル保存時、ESLint による自動フォーマット
+        },
+        "[tsv]": {
+          "editor.indentSize": 4,
+          "editor.insertSpaces": false
+        }
+      }
+    }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // コンテナ内の環境変数定義
+  "containerEnv": {
+    // 不要だったため削除
+    //"DATABASE_URL": "${localEnv:PRD_DATABASE_URL}"
+  },
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  //"postCreateCommand": "sh .devcontainer/postCreateCommand.sh",
+  // codespaces接続時に実行されるコマンド
+  "postAttachCommand": "",
+  // See https://code.visualstudio.com/blogs/2022/09/15/dev-container-features
+  "features": {
+    //"ghcr.io/devcontainers/features/aws-cli:1": {},
+    //"ghcr.io/devcontainers-contrib/features/aws-cdk:2": {},
+    //"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "node"
+}
