@@ -1,14 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 
-// as が大事らしい
-export const Context = React.createContext(
-  {} as {
-    text: string;
-    setText: React.Dispatch<React.SetStateAction<string>>;
-  }
-);
+interface ContextProps {
+  state: string;
+  setState: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Context = React.createContext<ContextProps>({
+  state: "",
+  setState: () => {},
+});
+
+export const useSampleContext = () => useContext(Context);
 
 export const ContextProvider = ({
   children,
@@ -16,8 +20,8 @@ export const ContextProvider = ({
   children: React.ReactNode;
 }) => {
   // 初期値は""の文字列
-  const [text, setText] = React.useState<string>("");
+  const [state, setState] = React.useState<string>("");
   return (
-    <Context.Provider value={{ text, setText }}>{children}</Context.Provider>
+    <Context.Provider value={{ state, setState }}>{children}</Context.Provider>
   );
 };
