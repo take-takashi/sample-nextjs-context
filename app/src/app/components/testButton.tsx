@@ -1,5 +1,5 @@
 import React from "react";
-import { ContextProvider, Context } from "../context";
+import { ContextProvider, Context } from "../readGlobalVar/context";
 
 const TestButton = () => {
   const state = React.useContext(Context);
