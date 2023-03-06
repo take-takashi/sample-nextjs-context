@@ -11,6 +11,10 @@ export const SampleContextPageContext = React.createContext(
   }
 );
 
+/**
+ * @see https://deecode.net/?p=1894
+ * @returns
+ */
 const SampleContextPage: NextPage = () => {
   const [count, setCount] = React.useState(0);
   return (
