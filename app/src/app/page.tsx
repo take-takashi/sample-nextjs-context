@@ -4,8 +4,15 @@ import Link from "next/link";
 const Home: NextPage = () => {
   return (
     <main>
-      <Link href="./readGlobalVar">ReadGlobalVar</Link>
-      <Link href="./writeGlobalVar">WriteGlobalVar</Link>
+      <p>
+        <Link href="./readGlobalVar">ReadGlobalVar</Link>
+      </p>
+      <p>
+        <Link href="./writeGlobalVar">WriteGlobalVar</Link>
+      </p>
+      <p>
+        <Link href="./sampleContextPage">SampleContextPage</Link>
+      </p>
     </main>
   );
 };
