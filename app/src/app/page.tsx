@@ -13,6 +13,9 @@ const Home: NextPage = () => {
       <p>
         <Link href="./sampleContextPage">SampleContextPage</Link>
       </p>
+      <p>
+        <Link href="./sampleContextsPage">SampleContextsPage</Link>
+      </p>
     </main>
   );
 };
