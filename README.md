@@ -1,6 +1,6 @@
 # sample-nextjs-hook
 
-Next.js でカスタムフックを試してみるテスト
+Next.js でContext APIを使ってグローバル変数をテスト
 
 # setup command
 
